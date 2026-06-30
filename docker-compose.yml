@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  qbittorrent-bot:
+    build: .
+    container_name: qbittorrent-telegram-bot
+    restart: unless-stopped
+    volumes:
+      - bot-data:/app/data
+    environment:
+      - SQLITE_DB_PATH=/app/data/bot_data.db
+    env_file:
+      - .env
+
+volumes:
+  bot-data:
