@@ -21,8 +21,11 @@ cp .env.example .env
 ### 2. Deploy
 
 #### Using Docker Compose (Recommended)
+You can chose to build the image locally or pull the latest image from GitHub Container Registry:
 ```bash
 docker compose up -d --build
+# or
+docker compose pull && docker compose up -d
 ```
 
 #### Running Locally
